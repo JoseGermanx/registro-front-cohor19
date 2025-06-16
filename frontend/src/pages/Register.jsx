@@ -10,9 +10,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await api.post("/register", formData);
+      await api.post("/registro", formData); // enviar peticion para hacer el registro
       alert("Usuario registrado exitosamente");
-      navigate("/login")
+      navigate("/login") // redireccion a ruta login
     } catch (err) {
       alert("Error al registrar: " + err.response.data.error);
     }
