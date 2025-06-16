@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext); // nos suscribimos al contexto
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(formData.email, formData.password)
+      await login(formData.email, formData.password) // se invoca la función logín desde el contexto
     } catch (err) {
       console.log(err)
       alert("Error al iniciar sesión");

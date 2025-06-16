@@ -6,7 +6,8 @@ const api = axios.create({
 })
 
 api.interceptors.request.use((config)=> {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token") // obtener el token del localStorage
+    // si el token existe, agregarlo a los headers de la peticion
     if(token) {
         config.headers.Authorization = `Bearer ${token}`
     }
